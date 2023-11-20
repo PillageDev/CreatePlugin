@@ -13,7 +13,7 @@ public class PowerSource {
     private int totalPowerStored;
     private int powerProductionRate; // Power per second
     private PowerGenerationType powerGenerationType;
-    private boolean ableToGenerate; /// If the block meets crieteria to generate power (e.g. if it's day for solar panels)
+    private boolean ableToGenerate; /// If the block meets criteria to generate power (e.g. if it's day for solar panels)
     private boolean enabled;
     private boolean connectedToWire;
     private boolean connectedToGrid;
@@ -38,6 +38,7 @@ public class PowerSource {
     public boolean canGenerate() {
         switch (powerGenerationType) {
             case COMBUSTION:
+
                 break;
             case GEOTHERMAL:
                 break;

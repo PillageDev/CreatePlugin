@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import dev.crafty.types.Placeable;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
@@ -620,6 +621,18 @@ public class Cuboid implements Iterable<Block>, Cloneable, ConfigurationSerializ
 				}
 			}
 			return b;
+		}
+
+		public Placeable nextPlaceable() {
+			Block b = this.w.getBlockAt(this.baseX + this.x, this.baseY + this.y, this.baseZ + this.z);
+			if (++x >= this.sizeX) {
+				this.x = 0;
+				if (++this.y >= this.sizeY) {
+					this.y = 0;
+					++this.z;
+				}
+			}
+			return new Placeable(b);
 		}
 
 		public void remove() {
