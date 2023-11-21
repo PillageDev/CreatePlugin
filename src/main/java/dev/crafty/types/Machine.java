@@ -17,6 +17,8 @@ public class Machine extends Placeable implements Listener {
     private Block block;
     private ItemStack itemStack;
     private int maxPowerInput;
+    private int requiredPower;
+    private ItemStack[] inventory;
 
     private NamespacedKey id = new NamespacedKey(Create.getInstance(), "identifier");
 
@@ -39,6 +41,10 @@ public class Machine extends Placeable implements Listener {
 
     }
 
+    public void scan() {
+
+    }
+
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (event.getBlock().equals(block)) {
@@ -52,5 +58,4 @@ public class Machine extends Placeable implements Listener {
             }
         }
     }
-
 }
